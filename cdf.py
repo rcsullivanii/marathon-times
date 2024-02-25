@@ -9,11 +9,11 @@ df['final_seconds'] = pd.to_timedelta(df['final']).dt.total_seconds()
 # Step 2: Sort the final times in ascending order
 sorted_final_seconds = np.sort(df['final_seconds'])
 
-# Step 3: Calculate the CDF values for these times
-# The CDF value at each point is given by the number of data points below that point divided by the total number of points
+# Step 3: Calc CDF for each time
+# CDF value at each point = (num of data points below that point) divided (the total number of points)
 cdf = np.arange(1, len(sorted_final_seconds)+1) / len(sorted_final_seconds)
 
-# Optionally, plot the CDF
+# Plot the CDF
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(8, 6))
