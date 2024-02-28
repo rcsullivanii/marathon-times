@@ -1,5 +1,5 @@
-# Method intakes a string formatted 'HH:MM:SS' and outputs total seconds
-def to_seconds(hhmmss) -> int :
+# Method intakes a string formatted 'HH:MM:SS' and outputs total minutes
+def to_minutes(hhmmss) -> int:
     hours, minutes, seconds = hhmmss.split(":")
-    total_seconds = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
-    return total_seconds
+    total_minutes = (int(hours) * 60) + int(minutes) + (int(seconds) / 60)
+    return total_minutes
